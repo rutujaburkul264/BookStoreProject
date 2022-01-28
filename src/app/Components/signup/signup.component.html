@@ -1,0 +1,82 @@
+<div class="body" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card fxHide.sm fxHide.xs
+        style="height: 100%; width: 22%; margin-top: 100px; border-radius: 25px; margin-right: -20px; background-color:#F5F5F5;">
+        <div>
+            <img src="../assets/book_store.png">
+        </div>
+        <div class="text">
+            online book shopping
+        </div>
+    </mat-card>
+    <mat-card class="container" fxLayout.xs="column" fxLayout.sm="column" fxFlex.xs="95" fxFlex.sm="60">
+        <div fxLayout="row" fxLayoutGap="50%" fxLayoutAlign="center center" fxLayout.xs="row" fxLayout.sm="row"
+            fxFlex.xs="95" fxFlex.xs="60">
+            <div class="login" routerLink="/login">
+                login
+            </div>
+            <div class="signup">
+                signup
+            </div>
+        </div>
+        <form [formGroup]="signupForm">
+            <div class="form-fields">
+                <div>
+                    <div>
+                        <mat-label style="font-size: medium; font-weight: 500;">Full Name</mat-label>
+                    </div>
+                    <div style="font-size: 10px;">
+                        <p>
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" formControlName="fullName" placeholder="">
+                                <mat-error>Enter full name</mat-error>
+                            </mat-form-field>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <mat-label style="font-size: medium; font-weight: 500;">Email Id</mat-label>
+                    </div>
+                    <div style="font-size: 10px;">
+                        <p>
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" formControlName="email" placeholder="">
+                                <mat-error>Choose a Gmail address</mat-error>
+                            </mat-form-field>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <mat-label style="font-size: medium; font-weight: 500;">Password</mat-label>
+                    </div>
+                    <div style="font-size: 10px;">
+                        <p>
+                            <mat-form-field appearance="outline">
+                                <input matInput type="password" formControlName="password" placeholder="">
+                                <mat-error>Enter a password</mat-error>
+                            </mat-form-field>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <mat-label style="font-size: medium; font-weight: 500;">Mobile Number</mat-label>
+                    </div>
+                    <div style="font-size: 10px;">
+                        <p>
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" formControlName="mobileNo" placeholder="">
+                                <mat-error>Enter a mobile number</mat-error>
+                            </mat-form-field>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div fxLayoutAlign="center center">
+                <button mat-flat-button (click)="onSubmit()"
+                    style="width: 80%; background: brown; color: white;">Signup</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
