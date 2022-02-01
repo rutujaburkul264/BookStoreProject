@@ -11,7 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
-// import {NgxPaginationModule} from 'ngx-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,9 @@ import { SignupComponent } from './Components/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
+import { GetCartComponent } from './Components/get-cart/get-cart.component';
+import { QuickviewComponent } from './Components/quickview/quickview.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { FooterComponent } from './Components/footer/footer.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    FooterComponent
+    FooterComponent,
+    GetAllBooksComponent,
+    GetCartComponent,
+    QuickviewComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     MatToolbarModule,
     MatIconModule,
     MatDividerModule,
-    // NgxPaginationModule,
+    NgxPaginationModule,
     MatSelectModule,
     MatSnackBarModule,
     MatRadioModule,

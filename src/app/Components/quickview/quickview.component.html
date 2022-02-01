@@ -1,0 +1,109 @@
+<div fxLayout="row" fxLayoutAlign="center start">
+    <div class="sideTwoImg" fxLayout="column" fxLayoutGap="10px">
+        <div class="image1">
+            <img src="../assets/Image 11@2x.png" id="img1">
+        </div>
+        <div class="image2">
+            <img src="../assets/Image 46@2x.png" id="img2">
+        </div>
+    </div>
+    <div class="imageContainer" fxLayout="column">
+        <div class="container" fxLayout="row">
+            <div class="image">
+                <img src="../assets/Image 11@2x.png">
+            </div>
+        </div>
+
+        <div class="buttonContainer" fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+                <button *ngIf="addtobag" mat-raised-button class="addtobag" (click)="addtoCart()">
+                    add to bag
+                </button>
+                <div *ngIf="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <button mat-icon-button (click)="decrement()">
+                        <span class="book_quantity">-</span>
+                    </button>
+                    <span style="font-size: 15px;">{{book_qty}}</span>
+                    <button mat-icon-button (click)="increment()">
+                        <span class="book_qty">+</span>
+                    </button>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center" class="addtowishlist">
+                <button mat-flat-button (click)="addtoWishlist()" class="wishlistbtn">
+                    <mat-icon class="wishlistIcon">favorite</mat-icon>wishlist
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bookDetails" fxLayout="column">
+        <div fxLayout="column">
+            <div class="bookName">
+                {{bookData?.bookName}}
+            </div>
+            <div class="author">
+                by {{bookData?.author}}
+            </div>
+            <div class="rating" fxLayout="row" fxLayoutAlign="center center">
+                <span>4.5</span>
+                <mat-icon class="starIcon">star</mat-icon>
+            </div>
+
+            <div class="prize" fxLayout="row" fxLayoutGap="10px">
+                <div class="price">
+                    Rs.{{bookData?.price}}
+                </div>
+                <div class="discountprice">
+                    <del> Rs. {{bookData?.discountPrice}} </del>
+                </div>
+            </div>
+        </div>
+        <mat-divider class="divider"></mat-divider>
+        <div fxLayout="column" fxLayoutAlign="start start">
+            <span class="bookdesc">Book Detail</span>
+            <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat commodi et<br> possimus quidem
+                veritatis.
+                Quas nesciunt quis, nobis inventore esse voluptatem,<br>corporis quod necessitatibus officiis, natus
+                animi
+                velit. Debitis, eveniet.
+            </p>
+        </div>
+        <mat-divider class="divider"></mat-divider>
+        <div class="customer">
+            <span>Customers Feedback</span>
+        </div>
+        <div class="overallratin">
+            <div class="rate">
+                <p class="ratename">Overall Rating</p>
+                <div class="starrating" (click)="enableDisableRule()" [ngClass]="{'icon-not-click':toggle,'icon-click':!toggle}">
+                    <mat-icon [(ngModel)]="value" value="5">star</mat-icon>
+                    <mat-icon [(ngModel)]="value" value="4">star</mat-icon>
+                    <mat-icon [(ngModel)]="value" value="3">star</mat-icon>
+                    <mat-icon [(ngModel)]="value" value="2">star</mat-icon>
+                    <mat-icon [(ngModel)]="value" value="1">star</mat-icon>
+                </div>
+            </div>
+            <div>
+                <input [(ngModel)]="feedback" type="text" placeholder="Write your review" class="review">
+            </div>
+            <div fxLayoutAlign="end center">
+                <button mat-flat-button color="primary" class="submit" (click)="addFeedback()">Submit</button>
+            </div>
+        </div>
+        <div>
+            <div *ngFor="let feedback of feedbackArray">
+                <button class="fabbutton" mat-mini-fab color="primary"
+                    aria-label="Example icon button with a menu icon">
+                    <mat-icon>{{getShortName(feedback.user_id.fullName)}}</mat-icon>
+                </button>
+                <span>{{feedback.fullName}}</span>
+                </div>
+                <div fxLayout="column">
+                    <span>{{feedback.rating}}</span>
+                    <span>{{feedback.comment}}</span>
+                </div>
+            </div>
+        </div>
+    </div>

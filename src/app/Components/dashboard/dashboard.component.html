@@ -1,25 +1,24 @@
-<mat-toolbar style="background: brown; color: white;" fxLayoutAlign="center center" fxLayout.xs="row wrap">
+<mat-toolbar class="toolbar" fxLayoutAlign="center center" fxLayout.xs="row wrap">
     <mat-toolbar-row fxLayout.xs="row wrap">
-        <div style="margin-left: 10%; height: 25px; width: 25px;">
-            <img src="../assets/education.svg">
+        <div class="bookImage" fxLayout="row" fxLayoutAlign="start center" (click)="bookstore()">
+            <div class="Image">
+                <img src="../assets/education.svg">
+            </div>
+            <div fxLayout.xs="row" >
+                <span class="name">Bookstore</span>
+            </div>
         </div>
-        <div fxLayout.xs="row">
-            <span style="margin-left: 10px;font-weight: 400;">Bookstore</span>
-        </div>
-        <mat-card fxLayout="row" fxLayoutAlign="start center" style="margin-left: 5%;" >
-            <mat-icon style="opacity: 0.7; font-size: 21px;margin-top: 5px;">search</mat-icon>
-            <input type="text" name="search" placeholder="Search ..."
-                style="margin-left: 5px; opacity: 0.7; border: none; outline: none; font-size: 15px;">
+        <mat-card class="searchbar" fxLayout="row" fxLayoutAlign="start center">
+            <mat-icon class="search_bar">search</mat-icon>
+            <input type="text" name="search" placeholder="Search ..." class="search">
         </mat-card>
-        <div fxLayout="column" fxLayoutAlign="center center"
-            style="margin-left: 15%; cursor: pointer; margin-top: 10px;">
-            <mat-icon style="font-size: 20px;">person_outline</mat-icon>
-            <span style="font-size: 13px; font-weight: 400;">profile</span>
+        <div class="profileImage" fxLayout="column" fxLayoutAlign="center center">
+            <mat-icon class="profileimg">person_outline</mat-icon>
+            <span class="profileName">profile</span>
         </div>
-        <div fxLayout="column" fxLayoutAlign="end center" 
-        style="margin-left: 50px; cursor: pointer; margin-top: 10px;">
-            <mat-icon style="font-size: 20px;">shopping_cart</mat-icon>
-            <span style="font-size: 13px; font-weight: 400;">cart</span>
+        <div class="Cart" fxLayout="column" fxLayoutAlign="end center">
+            <mat-icon class="cartIcon">shopping_cart</mat-icon>
+            <span class="cartName">cart</span>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
@@ -29,4 +28,3 @@
 <div>
     <app-footer></app-footer>
 </div>
-

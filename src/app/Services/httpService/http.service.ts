@@ -11,8 +11,8 @@ export class HttpService {
 
   constructor(private http:HttpClient) { }
 
-  post(url:any,data:any,token:boolean=false,httpoptions:any ={}){
-    console.log(data)
+  post(url : any ,data: any = null,token: boolean = false,httpoptions : any = {}) {
+    console.log("data is in http service",data)
     return this.http.post(this.baseurl+url,data,token && httpoptions)
   }
 
@@ -20,7 +20,9 @@ export class HttpService {
     return this.http.get(this.baseurl+url,token && httpoptions)
   }
 
-  put(){}
+  put(url : any ,data: any = null,token: boolean = false,httpoptions : any = {}){
+    return this.http.put(this.baseurl+url,data,token && httpoptions)
+  }
 
   delete(){}
 }

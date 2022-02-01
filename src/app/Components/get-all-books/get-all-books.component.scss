@@ -1,0 +1,64 @@
+.container{
+    border: 1px solid lightgrey;
+    height: 40%;
+    width: 15%;
+    margin: 20px;
+  }
+  .container:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .image{
+    background: #E2E2E2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .rating{
+    font-size: 10px; 
+    margin-left: 15px;
+    background: darkgreen;
+    color: white;
+    height: 14px;
+    width: 28px;
+  }
+  .prize{
+    font-size: 10px;
+    margin-left: 15px;
+    margin-bottom: 10%;
+  }
+  .bookCount{
+    margin-left: 90px; 
+    margin-top: 50px;
+  }
+  .books{
+    font-size: 25px;
+    color: #0A0102;
+  }
+  .count{
+    font-size: 10px;
+    color: #878787;
+  }
+  .sort{
+    margin-top: 50px; 
+    margin-right: 80px;
+  }
+  .bookname{
+    margin-left: 15px;
+    font-family: Roboto;
+    font-weight: 500; 
+    margin-top: 8px;
+  }
+  .author{
+    font-size: 10px; 
+    color: grey; 
+    margin-left: 15px;
+  }
+  .Star{
+    font-size: 10px; 
+    margin-top: 12px;
+  }
+  .prizediv{
+    font-weight: 600;
+  }
+  pagination-controls{
+    color: brown;
+  }

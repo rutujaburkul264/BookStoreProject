@@ -6,8 +6,11 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
+  token: any;
 
-  constructor(private httpservice:HttpService) { }
+  constructor(private httpservice:HttpService) {
+   
+   }
 
   Signup(data:any){
     let header = {
@@ -25,5 +28,16 @@ export class UserService {
       })
     }
     return this.httpservice.post("login",data,true,header)
+  }
+
+  updateAddress(data: any){
+    this.token = localStorage.getItem('Token')
+    let header={
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'x-access-token': this.token,
+      })
+    }
+    return this.httpservice.put('edit_user',data,true,header)
   }
 }

@@ -1,0 +1,156 @@
+.container{
+    border: 1px solid darkgrey; 
+    width: 100%;
+}
+.image{
+    width: 50%;
+    margin: 30px;
+}
+.prize{
+    font-size: 20px;
+    margin-top: 10px;
+  }
+.rating{
+    background: darkgreen;
+    height: 20px;
+    width: 40px;
+    color: white;
+    margin-bottom: 10px;
+}
+.book_quantity{
+    font-size: 20px;
+    border: 1px solid grey;
+    border-radius: 100%;
+    color: lightgrey;
+}
+.book_qty{
+    font-size: 20px;
+    border: 1px solid grey;
+    border-radius: 100%;
+    color: black;
+}
+.sideTwoImg{
+    margin-bottom: 16%; 
+    margin-right: 5px; 
+    margin-top: 5%;
+}
+.image1{
+    border: 1px solid black; 
+    padding: 5px;
+}
+#img1{
+    height: 55px; 
+    width: 40px;
+}
+#img2{
+    height: 55px; 
+    width: 40px;
+}
+.image2{
+    border: 1px solid black; 
+    padding: 5px;
+}
+.imageContainer{
+    margin-top: 5%;
+}
+.buttonContainer{
+    margin-top: 20px;
+}
+.addtobag{
+    background: brown; 
+    color: white; 
+    width: 125%; 
+    text-transform: uppercase;
+}
+.addtowishlist{
+    background: black; 
+    color: white;
+}
+.wishlistbtn{
+    background: black; 
+    color: white; 
+    width: 50%; 
+    text-transform: uppercase;
+}
+.wishlistIcon{
+    font-size: 18px;
+}
+.bookDetails{
+    margin-left: 5%; 
+    margin-bottom: 5%; 
+    margin-top: 5%;
+}
+.bookName{
+    font-size: 20px; 
+    margin-bottom: 10px;
+}
+.author{
+    color: grey; 
+    font-size: 15px; 
+    margin-bottom: 10px;
+}
+.starIcon{
+    font-size: 10px; 
+    margin-top: 12px;
+}
+.price{
+    font-weight: 600; 
+    margin-bottom: 10px;
+}
+.discountprice{
+    color: grey;
+}
+.divider{
+    margin-top: 10px; 
+    width: 595px;
+}
+.bookdesc{
+    opacity: 0.7; 
+    margin-top: 20px; 
+    margin-bottom: 5px;
+}
+.paragraph{
+    font-size: 13px;
+}
+.customer{
+    font-size: 18px; 
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.review{
+    border: none; 
+    outline: none; 
+    height: 60px; 
+    width: 90%;
+    margin-left: 20px;
+    font-size: 15px; 
+}
+.submit{
+    margin-right: 35px; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+.overallratin{
+    background: #E4E4E4;
+}
+.rate{
+    margin-left: 15px;
+}
+.ratename{
+    font-size: 13px; 
+    font-weight: 500;
+    margin-top: 10px;
+}
+.starrating{
+    margin-bottom: 10px;
+}
+.example-button-row button,
+.icon-not-click   {
+ color: black;
+ cursor: pointer;
+}
+
+.icon-click  {
+ color: yellow;
+ cursor: pointer;
+}

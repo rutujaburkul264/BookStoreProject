@@ -1,0 +1,223 @@
+<mat-accordion>
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                My Cart (1)
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxLayout="column">
+                    <div class="book" fxLayout="row" fxLayoutAlign="start center" *ngFor="let book of cartList">
+                        <div>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img src="../assets/Image 11@2x.png" class="bookImage">
+                            </div>
+                        </div>
+                        <div class="bookdetails">
+                            <div class="bookname">
+                                {{book.product_id.bookName}}
+                            </div>
+                            <div class="author">
+                                by {{book.product_id.author}}
+                            </div>
+                            <div class="rating" fxLayoutAlign="start center">
+                                4.5
+                                <mat-icon style="font-size: 10px; margin-top: 12px;">star</mat-icon>
+                            </div>
+                            <div class="prize" fxLayout="row" fxLayoutGap="5px">
+                                <div class="mrp">
+                                    Rs.{{book.product_id.price}}
+                                </div>
+                                <div class="discount">
+                                    <del> Rs.{{book.product_id.discountPrice}} </del>
+                                </div>
+                            </div>
+                            <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
+                                <button mat-icon-button (click)="decrement(book)">
+                                    <span class="book_quantity" style="color: lightgrey;">-</span>
+                                </button>
+                                <span style="font-size: 15px;">{{book_qty}}</span>
+                                <button mat-icon-button (click)="increment(book)">
+                                    <span class="book_qty" style="color: black;">+</span>
+                                </button>
+                                <span>remove</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%">
+                    <div class="location" fxLayoutAlign="center center">
+                        <mat-icon class="placeIcon">place</mat-icon>
+                        <span class="loc">Use current location</span>
+                    </div>
+                    <div>
+                        <button mat-flat-button color="primary" class="button" (click)="nextStep()">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Customer Details
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="customerDetails" fxLayout="row" fxLayoutAlign="space-between start">
+            <form [formGroup]="editDetailsOfUserForm">
+                <div>
+                    <div class="details" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="40%">
+                        <span class="heading">Customer Details</span>
+                    </div>
+                    <div class="details" fxLayout="row" fxLayoutGap="20px">
+                        <div>
+                            <div>
+                                <mat-label class="names">Full Name</mat-label>
+                            </div>
+                            <div>
+                                <p>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput type="text" formControlName="fullName" placeholder="">
+                                        <mat-error>Enter full name</mat-error>
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <mat-label class="names">Mobile Number</mat-label>
+                            </div>
+                            <div>
+                                <p>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput type="text" formControlName="mobileNo" placeholder="">
+                                        <mat-error>Enter mobile number</mat-error>
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details" fxLayout="column">
+                        <div>
+                            <mat-label class="names">Address</mat-label>
+                        </div>
+                        <div>
+                            <p>
+                                <mat-form-field appearance="outline">
+                                    <input matInput type="text" formControlName="address" placeholder="">
+                                    <mat-error>Enter address</mat-error>
+                                </mat-form-field>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="details" fxLayout="row" fxLayoutAlign="space-between center">
+                        <div>
+                            <div>
+                                <mat-label class="names">City/Town</mat-label>
+                            </div>
+                            <div>
+                                <p>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput type="text" formControlName="city" placeholder="">
+                                        <mat-error>Enter city</mat-error>
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <mat-label class="names">State</mat-label>
+                            </div>
+                            <div>
+                                <p>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput type="text" formControlName="state" placeholder="">
+                                        <mat-error>Enter state</mat-error>
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="column">
+                        <span class="type">Type</span>
+                        <mat-radio-group>
+                            <mat-radio-button value="1" id="home">home</mat-radio-button>
+                            <mat-radio-button value="2" id="work">Work</mat-radio-button>
+                            <mat-radio-button value="3" id="other">Other</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            </form>
+            <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="170%">
+                <div class="address" fxLayoutAlign="center center">
+                    <span>Add New Address</span>
+                </div>
+                <div>
+                    <button mat-flat-button color="primary" class="button"
+                        (click)="nextStep(); updateAddress()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Order Summary
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="container">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxLayout="column">
+                    <div class="book" fxLayout="row" fxLayoutAlign="start center" *ngFor="let book of cartList">
+                        <div>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img src="../assets/Image 11@2x.png" class="bookImage">
+                            </div>
+                        </div>
+                        <div class="bookdetails">
+                            <div class="bookname">
+                                {{book.product_id.bookName}}
+                            </div>
+                            <div class="author">
+                                by {{book.product_id.author}}
+                            </div>
+                            <div class="rating" fxLayoutAlign="start center">
+                                4.5
+                                <mat-icon style="font-size: 10px; margin-top: 12px;">star</mat-icon>
+                            </div>
+                            <div class="prize" fxLayout="row" fxLayoutGap="5px">
+                                <div class="mrp">
+                                    Rs.{{book.product_id.price}}
+                                </div>
+                                <div class="discount">
+                                    <del> Rs.{{book.product_id.discountPrice}} </del>
+                                </div>
+                            </div>
+                            <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
+                                <button mat-icon-button (click)="decrement(book)">
+                                    <span class="book_quantity" style="color: lightgrey;">-</span>
+                                </button>
+                                <span style="font-size: 15px;">{{book_qty}}</span>
+                                <button mat-icon-button (click)="increment(book)">
+                                    <span class="book_qty" style="color: black;">+</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%">
+                <div>
+                    <button mat-flat-button color="primary" class="button" (click)="placeOrder()">CheckOut</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </mat-expansion-panel>
+
+
+</mat-accordion>

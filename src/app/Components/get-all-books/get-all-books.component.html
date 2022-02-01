@@ -1,0 +1,46 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="bookCount">
+        <span class="books">Books</span>
+        <span class="count">({{countBooks}} items)</span>
+    </div>
+    <div class="sort">
+        <mat-form-field appearance="outline">
+            <mat-label>Sort by relevance</mat-label>
+            <mat-select style="height: 10px;" >
+                <mat-option (click)="lowTohigh()" value="1">Price:Low to High</mat-option>
+                <mat-option (click)="highTolow()" value="2">Price:High to Low</mat-option>
+                <mat-option (click)="newArrivals()" value="3">Newest Arrivals</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+    <div class="container" *ngFor="let book of bookstore | 
+    paginate: {itemsPerPage: 10, currentPage: page, totalItems: totalLength}">
+        <div class="image" fxLayoutAlign="center center" (click)="quickview(book)">
+            <img src="../assets/Image 11@2x.png" style="height: 60%; width: 50%;">
+        </div>
+        <mat-divider></mat-divider>
+        <div class="bookname">
+            {{book.bookName}}
+        </div>
+        <div class="author">
+            by {{book.author}}
+        </div>
+        <div class="rating" fxLayoutAlign="start center">
+            4.5
+            <mat-icon class="Star">star</mat-icon>
+        </div>
+        <div class="prize" fxLayout="row" fxLayoutGap="5px">
+            <div class="prizediv">
+                Rs.{{book.price}}
+            </div>
+            <div style="color: grey;">
+                <del> Rs.{{book.discountPrice}} </del>
+            </div>
+        </div>
+    </div>
+    <div class="pagination" fxLayout="column" fxLayoutAlign="center end">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>
