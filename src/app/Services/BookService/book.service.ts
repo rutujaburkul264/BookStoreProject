@@ -38,7 +38,7 @@ export class BookService {
         'x-access-token': this.token,
       })
     }
-    return this.httpservice.put('cart_item_quantity'+productID,req,true,header)
+    return this.httpservice.put('cart_item_quantity/'+productID,req,true,header)
   }
 
   getcartList(){
@@ -74,13 +74,34 @@ export class BookService {
   }
 
   addfeedback(productId:any, data: any){
-    // this.token = localStorage.getItem('Token')
+    this.token = localStorage.getItem('Token')
     let header = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'x-access-token': this.token,
       })
     }
-    return this.httpservice.post('feedback' + productId, data, true, header)
+    return this.httpservice.post('feedback/' + productId, data, true, header)
+  }
+
+  deleteItem(productId:any){
+    this.token = localStorage.getItem('Token')
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token,
+      })
+    }
+    return this.httpservice.delete('remove_cart_item/' + productId, null, true, header)
+  }
+  getwishlistItems(){
+    this.token = localStorage.getItem('Token')
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token,
+      })
+    }
+    return this.httpservice.get('get_wishlist_items',true,header)
   }
 }

@@ -2,7 +2,7 @@
     <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>
-                My Cart (1)
+                My Cart ({{listCountOfCart}})
             </mat-panel-title>
         </mat-expansion-panel-header>
         <div class="container">
@@ -27,21 +27,21 @@
                             </div>
                             <div class="prize" fxLayout="row" fxLayoutGap="5px">
                                 <div class="mrp">
-                                    Rs.{{book.product_id.price}}
+                                    Rs.{{book.product_id.discountPrice}}
                                 </div>
                                 <div class="discount">
-                                    <del> Rs.{{book.product_id.discountPrice}} </del>
+                                    <del> Rs.{{book.product_id.price}} </del>
                                 </div>
                             </div>
                             <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
-                                <button mat-icon-button (click)="decrement(book)">
-                                    <span class="book_quantity" style="color: lightgrey;">-</span>
+                                <button mat-mini-fab style="background-color: white; margin-right: 10px;" (click)="decrement(book)">
+                                    <span class="book_quantity">-</span>
                                 </button>
-                                <span style="font-size: 15px;">{{book_qty}}</span>
-                                <button mat-icon-button (click)="increment(book)">
-                                    <span class="book_qty" style="color: black;">+</span>
+                                <span class="book_qtyName">{{book_qty}}</span>
+                                <button mat-mini-fab style="background-color: white; margin-left: 10px;" (click)="increment(book)">
+                                    <span class="book_qty">+</span>
                                 </button>
-                                <span>remove</span>
+                                <span class="remove" (click)="deleteCartItem(book)">Remove</span>
                             </div>
                         </div>
                     </div>
@@ -191,33 +191,21 @@
                             </div>
                             <div class="prize" fxLayout="row" fxLayoutGap="5px">
                                 <div class="mrp">
-                                    Rs.{{book.product_id.price}}
+                                    Rs.{{book.product_id.discountPrice}}
                                 </div>
                                 <div class="discount">
-                                    <del> Rs.{{book.product_id.discountPrice}} </del>
+                                    <del> Rs.{{book.product_id.price}} </del>
                                 </div>
-                            </div>
-                            <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
-                                <button mat-icon-button (click)="decrement(book)">
-                                    <span class="book_quantity" style="color: lightgrey;">-</span>
-                                </button>
-                                <span style="font-size: 15px;">{{book_qty}}</span>
-                                <button mat-icon-button (click)="increment(book)">
-                                    <span class="book_qty" style="color: black;">+</span>
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%">
+                <div class="rightdiv" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="80%">
                 <div>
                     <button mat-flat-button color="primary" class="button" (click)="placeOrder()">CheckOut</button>
                 </div>
             </div>
             </div>
         </div>
-
     </mat-expansion-panel>
-
-
 </mat-accordion>

@@ -1,0 +1,36 @@
+<div class="container">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="column">
+            <div class="book" fxLayout="row" fxLayoutAlign="start center" *ngFor="let book of wishList">
+                <div>
+                    <div class="image" fxLayoutAlign="start center">
+                        <img src="../assets/Image 11@2x.png" class="bookImage">
+                    </div>
+                </div>
+                <div class="bookdetails">
+                    <div class="bookname">
+                        {{book.product_id.bookName}}
+                    </div>
+                    <div class="author">
+                        by {{book.product_id.author}}
+                    </div>
+                    <div class="rating" fxLayoutAlign="start center">
+                        4.5
+                        <mat-icon style="font-size: 10px; margin-top: 12px;">star</mat-icon>
+                    </div>
+                    <div class="prize" fxLayout="row" fxLayoutGap="5px">
+                        <div class="mrp">
+                            Rs.{{book.product_id.price}}
+                        </div>
+                        <div class="discount">
+                            <del> Rs.{{book.product_id.discountPrice}} </del>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%">
+            <img src="../assets/delete.png" id="delete">
+        </div>
+    </div>
+</div>

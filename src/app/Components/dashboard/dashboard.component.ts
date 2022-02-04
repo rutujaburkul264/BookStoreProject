@@ -13,6 +13,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  Cart(){
+    this.route.navigateByUrl("/dashboard/getCart")
+  }
   bookstore(){
     this.route.navigateByUrl("/dashboard/books")
   }

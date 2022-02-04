@@ -1,10 +1,21 @@
 .toolbar{
-  background: brown; 
+  background: rgb(141, 32, 32); 
   color: white;
+  overflow: hidden;
+  position: sticky;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+  @media screen and (max-width: 1000px) and (min-width: 300px) {
+    width: 100%;
+  }
 }
 .bookImage{
   margin-left: 10%;
   cursor: pointer;
+  @media screen and (max-width: 1000px) and (min-width: 300px) {
+    margin-left: 0%;
+  }
 }
 .Image{
   height: 25px; 
@@ -16,6 +27,9 @@
 }
 .searchbar{
   margin-left: 5%;
+  @media screen and (max-width: 1000px) and (min-width: 300px) {
+    width: 100%;
+  }
 }
 .search_bar{
   opacity: 0.7; 
@@ -33,6 +47,11 @@
   margin-left: 15%; 
   cursor: pointer; 
   margin-top: 10px;
+  @media screen and (max-width: 1000px) and (min-width: 300px) {
+    margin-left: 15%; 
+    cursor: pointer; 
+    margin-top: 10px;
+  }
 }
 .profileimg{
   font-size: 20px;
@@ -45,6 +64,11 @@
   margin-left: 50px; 
   cursor: pointer; 
   margin-top: 10px;
+  @media screen and (max-width: 1000px) and (min-width: 300px) {
+    margin-left: 50px; 
+    cursor: pointer; 
+    margin-top: 10px;
+  }
 }
 .cartIcon{
   font-size: 20px;

@@ -3,7 +3,14 @@ footer{
     color: white;
     height: 50px;
     width: 100%;
-    bottom: 0;
-    position: relative;
+    position: fixed;
     font-size: 13px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 1000px) and (min-width: 300px) {
+        width: 100%;
+    }
   }

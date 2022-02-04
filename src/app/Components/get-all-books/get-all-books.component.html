@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="space-between center">
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayout.xs="row" fxLayout.sm="row">
     <div class="bookCount">
         <span class="books">Books</span>
         <span class="count">({{countBooks}} items)</span>
@@ -16,7 +16,8 @@
 </div>
 <div fxLayout="row wrap" fxLayoutAlign="center center">
     <div class="container" *ngFor="let book of bookstore | 
-    paginate: {itemsPerPage: 10, currentPage: page, totalItems: totalLength}">
+    paginate: {itemsPerPage: 10, currentPage: page, totalItems: totalLength}"
+    fxLayout.sm="column" fxFlex.xs="50">
         <div class="image" fxLayoutAlign="center center" (click)="quickview(book)">
             <img src="../assets/Image 11@2x.png" style="height: 60%; width: 50%;">
         </div>
@@ -33,10 +34,10 @@
         </div>
         <div class="prize" fxLayout="row" fxLayoutGap="5px">
             <div class="prizediv">
-                Rs.{{book.price}}
+                Rs.{{book.discountPrice}}
             </div>
             <div style="color: grey;">
-                <del> Rs.{{book.discountPrice}} </del>
+                <del> Rs.{{book.price}} </del>
             </div>
         </div>
     </div>

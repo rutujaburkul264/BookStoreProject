@@ -15,6 +15,7 @@ export class GetCartComponent implements OnInit {
   cartList: any = [];
   step = 0;
   orderList: any = [];
+  listCountOfCart: any;
 
   constructor(private bookservice:BookService,private route:Router,private formbuilder:FormBuilder,private userservice:UserService) { }
 
@@ -35,10 +36,13 @@ export class GetCartComponent implements OnInit {
       console.log(response)
       this.cartList = response.result
       this.cartList.reverse()
+      this.listCountOfCart = response.result.length
     })
   }
   decrement(book:any){
-    this.book_qty = this.book_qty - 1;
+    if(this.book_qty != 1){
+      this.book_qty = this.book_qty - 1;
+      }
     this.updateQty(book);
   }
 
@@ -85,11 +89,12 @@ export class GetCartComponent implements OnInit {
 
   placeOrder(){
     this.cartList.forEach((element:any) => {
+      console.log(element)
       this.orderList.push(
         {
         "product_id" : element.product_id._id,
-        "product_name" : element.product_name.bookName,
-        "product_quantity" : element.product_quantity.quantityToBuy,
+        "product_name" : element.product_id.bookName,
+        "product_quantity" : element.product_id.quantityToBuy,
         "product_price" : element.product_id.price
         })
     });
@@ -103,4 +108,12 @@ export class GetCartComponent implements OnInit {
 
     })
   }
+
+  deleteCartItem(book: any){
+    this.bookservice.deleteItem(book._id).subscribe((response: any) => {
+      console.log(response);
+    })
+    this.getCartList();
+  }
+  
 }

@@ -48,13 +48,15 @@ export class QuickviewComponent implements OnInit {
   }
 
   decrement(){
+    if(this.book_qty > 0){
     this.book_qty = this.book_qty - 1;
-    this.updateQty;
+    }
+    this.updateQty();
   }
 
   increment(){
     this.book_qty = this.book_qty + 1;
-    this.updateQty;
+    this.updateQty();
   }
 
   updateQty(){
@@ -71,11 +73,7 @@ export class QuickviewComponent implements OnInit {
     this.bookservice.addToWishlist(this.bookid).subscribe((response:any) =>{
       console.log(response)
     })
-  }
-
-  enableDisableRule() {
-    this.toggle = !this.toggle;
-    this.status = this.toggle ? 'Enable' : 'Disable';
+    this.route.navigateByUrl('/dashboard/getWishList')
   }
 
   getShortName(fullName: any) {

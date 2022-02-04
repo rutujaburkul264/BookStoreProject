@@ -45,7 +45,7 @@ export class GetAllBooksComponent implements OnInit {
   }
 
   newArrivals(){
-    
+    this.bookstore.reverse();
   }
 }
 

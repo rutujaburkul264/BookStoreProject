@@ -1,6 +1,10 @@
 .container{
     border: 1px solid darkgrey; 
     width: 100%;
+    @media screen and (max-width: 1000px) and (min-width: 300px) {
+        border: 1px solid darkgrey; 
+        width: 100%;
+    }
 }
 .image{
     width: 50%;
@@ -131,7 +135,7 @@
     margin-bottom: 20px; 
 }
 .overallratin{
-    background: #E4E4E4;
+    background: whitesmoke;
 }
 .rate{
     margin-left: 15px;
@@ -143,14 +147,24 @@
 }
 .starrating{
     margin-bottom: 10px;
+    float: left;
 }
-.example-button-row button,
-.icon-not-click   {
- color: black;
- cursor: pointer;
+.starrating input{
+    display: none;
 }
-
-.icon-click  {
- color: yellow;
- cursor: pointer;
+.starrating label{
+    font-size: 20px;
+    color: #444;
+    padding: 8px;
+    float: right;
+    transition: all 0.2 ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label
+{
+    color: #fd4;
+}
+input #rate-5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
 }

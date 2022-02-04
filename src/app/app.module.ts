@@ -25,6 +25,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
 import { GetCartComponent } from './Components/get-cart/get-cart.component';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
+import { GetWishListComponent } from './Components/get-wish-list/get-wish-list.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { QuickviewComponent } from './Components/quickview/quickview.component';
     FooterComponent,
     GetAllBooksComponent,
     GetCartComponent,
-    QuickviewComponent
+    QuickviewComponent,
+    GetWishListComponent
   ],
   imports: [
     BrowserModule,

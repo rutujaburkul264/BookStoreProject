@@ -1,24 +1,24 @@
 <mat-toolbar class="toolbar" fxLayoutAlign="center center" fxLayout.xs="row wrap">
-    <mat-toolbar-row fxLayout.xs="row wrap">
-        <div class="bookImage" fxLayout="row" fxLayoutAlign="start center" (click)="bookstore()">
+    <mat-toolbar-row fxLayout.xs="row" fxFlex.xs="70">
+        <div class="bookImage" fxLayout="row" fxLayoutAlign="start center" (click)="bookstore()" fxLayout.xs="row" fxFlex.xs="30">
             <div class="Image">
                 <img src="../assets/education.svg">
             </div>
-            <div fxLayout.xs="row" >
+            <div>
                 <span class="name">Bookstore</span>
             </div>
         </div>
-        <mat-card class="searchbar" fxLayout="row" fxLayoutAlign="start center">
+        <mat-card class="searchbar" fxLayout="row" fxLayoutAlign="start center" fxLayout.xs="row" fxFlex.xs="40">
             <mat-icon class="search_bar">search</mat-icon>
-            <input type="text" name="search" placeholder="Search ..." class="search">
+            <input type="text" name="search" placeholder="Search ..." class="search" fxHide.xs fxHide.sm>
         </mat-card>
-        <div class="profileImage" fxLayout="column" fxLayoutAlign="center center">
+        <div class="profileImage" fxLayout="column" fxLayoutAlign="center center" fxLayout.xs="row" fxFlex.xs="50">
             <mat-icon class="profileimg">person_outline</mat-icon>
-            <span class="profileName">profile</span>
+            <span class="profileName" fxHide.xs fxHide.sm>profile</span>
         </div>
-        <div class="Cart" fxLayout="column" fxLayoutAlign="end center">
-            <mat-icon class="cartIcon">shopping_cart</mat-icon>
-            <span class="cartName">cart</span>
+        <div class="Cart" fxLayout="column" fxLayoutAlign="end center" fxLayout.xs="row" fxFlex.xs="50">
+            <mat-icon class="cartIcon" (click)="Cart()">shopping_cart</mat-icon>
+            <span class="cartName" fxHide.xs fxHide.sm>cart</span>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
