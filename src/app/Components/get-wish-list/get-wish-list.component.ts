@@ -9,14 +9,26 @@ import { BookService } from 'src/app/Services/BookService/book.service';
 export class GetWishListComponent implements OnInit {
   
   wishList: any;
+  wishlistCount: any;
+
   constructor(private bookservice:BookService) { }
 
   ngOnInit(): void {
-    this.getWihlist()
+    this.getWishlist()
   }
 
-  getWihlist(){
+  getWishlist(){
     this.bookservice.getwishlistItems().subscribe((response:any)=>{
+      console.log(response)
+      this.wishList = response.result
+      this.wishList.reverse()
+      this.wishlistCount = response.result.length
+    })
+  }
+
+  deleteWishlist(book:any){
+    console.log(book.product_id._id)
+    this.bookservice.deleteWishlistItem(book.product_id._id).subscribe((response:any)=>{
       console.log(response)
     })
   }

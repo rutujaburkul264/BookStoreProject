@@ -2,3 +2,63 @@
     height: 15px;
     width: 15px;
 }
+.bookImage{
+    height: 100px;
+    width: 80px;
+    margin-left: 20%;
+}
+.bookname{
+    margin-left: 15px;
+    font-family: Roboto;
+    font-weight: 500; 
+    margin-top: 8px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.author{
+    font-size: 12px; 
+    color: grey; 
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+.book{
+    height: 150px;
+    width: 65%;
+    margin-left: 16%;
+    margin-top: 10px;
+}
+.mywishlist{
+    font-weight: 500;
+    font-size: 20px;
+    height: 50px;
+    width: 65%;
+    margin-left: 16%;
+    margin-top: 10px;
+}
+.rating{
+    font-size: 10px; 
+    margin-left: 15px;
+    background: darkgreen;
+    color: white;
+    height: 14px;
+    width: 28px;
+    margin-bottom: 5px;
+  }
+  .prize{
+    font-size: 15px;
+    margin-left: 15px;
+    margin-bottom: 10%;
+  }
+  .bookdetails{
+    margin-top: 5%;
+    margin-left: 15%;
+}
+.discount{
+  color: grey;
+}
+.mrp{
+   font-weight: 600; 
+}
+.rightdiv{
+    margin-left: 75%;
+}

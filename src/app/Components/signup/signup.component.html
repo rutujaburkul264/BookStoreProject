@@ -21,6 +21,15 @@
         <form [formGroup]="signupForm">
             <div class="form-fields">
                 <div>
+                    <mat-form-field appearance="fill" style="height: 70px;">
+                        <mat-label>Select an option*</mat-label>
+                        <mat-select disableRipple>
+                          <mat-option value="1">User</mat-option>
+                          <mat-option value="2">Admin</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                <div>
                     <div>
                         <mat-label style="font-size: medium; font-weight: 500;">Full Name</mat-label>
                     </div>

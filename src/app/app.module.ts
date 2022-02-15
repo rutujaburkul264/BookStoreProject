@@ -26,6 +26,8 @@ import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.c
 import { GetCartComponent } from './Components/get-cart/get-cart.component';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { GetWishListComponent } from './Components/get-wish-list/get-wish-list.component';
+import { ContinueShoppingComponent } from './Components/continue-shopping/continue-shopping.component';
+import { AdminBookComponent } from './Components/admin-book/admin-book.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { GetWishListComponent } from './Components/get-wish-list/get-wish-list.c
     GetAllBooksComponent,
     GetCartComponent,
     QuickviewComponent,
-    GetWishListComponent
+    GetWishListComponent,
+    ContinueShoppingComponent,
+    AdminBookComponent
   ],
   imports: [
     BrowserModule,

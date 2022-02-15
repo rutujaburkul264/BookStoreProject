@@ -104,4 +104,14 @@ export class BookService {
     }
     return this.httpservice.get('get_wishlist_items',true,header)
   }
+  deleteWishlistItem(productId: any){
+    this.token = localStorage.getItem('Token')
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token,
+      })
+    }
+    return this.httpservice.delete('remove_wishlist_item/' + productId, null, true, header)
+  }
 }

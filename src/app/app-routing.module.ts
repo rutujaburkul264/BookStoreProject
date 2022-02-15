@@ -8,6 +8,8 @@ import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { GetCartComponent } from './Components/get-cart/get-cart.component';
 import { GetWishListComponent } from './Components/get-wish-list/get-wish-list.component';
 import { AuthenticationGuard } from './Components/authentication.guard';
+import { ContinueShoppingComponent } from './Components/continue-shopping/continue-shopping.component';
+import { AdminBookComponent } from './Components/admin-book/admin-book.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/signup', pathMatch: 'full'},
@@ -20,7 +22,9 @@ const routes: Routes = [
     {path:'books', component:GetAllBooksComponent},
     {path: 'quickview/:bookid', component:QuickviewComponent},
     {path: 'getCart' , component:GetCartComponent},
-    {path: 'getWishList' , component:GetWishListComponent}
+    {path: 'getWishList' , component:GetWishListComponent},
+    {path: 'shopping' , component:ContinueShoppingComponent},
+    {path: 'bookList', component:AdminBookComponent}
    ]}
 ];
 

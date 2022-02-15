@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./quickview.component.scss']
 })
 export class QuickviewComponent implements OnInit {
-  bookid: any;
+  id: any;
   bookData: any;
   book_qty = 1;
   feedback: any;
@@ -23,14 +23,15 @@ export class QuickviewComponent implements OnInit {
   constructor(private bookservice: BookService, private route: Router, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.bookid = localStorage.getItem("bookId")
+    this.id = localStorage.getItem("bookId")
     this.getBookDetails();
   }
 
   getBookDetails() {
     this.bookservice.getAllBooks().subscribe((response: any) => {
         response.result.forEach((element: any) => {
-          if (element._id == this.bookid) {
+          // console.log(element)
+          if (element._id == this.id) {
             this.bookData = element;
         }
       });
@@ -41,7 +42,7 @@ export class QuickviewComponent implements OnInit {
     this.addtobag = false;
     this.quantity = true;
 
-    this.bookservice.addToBag(this.bookid).subscribe((response: any) =>{
+    this.bookservice.addToBag(this.id).subscribe((response: any) =>{
       console.log(response)
     })
     this.route.navigateByUrl('/dashboard/getCart')
@@ -70,7 +71,7 @@ export class QuickviewComponent implements OnInit {
   
   addtoWishlist(){
     console.log("added to wishlist")
-    this.bookservice.addToWishlist(this.bookid).subscribe((response:any) =>{
+    this.bookservice.addToWishlist(this.id).subscribe((response:any) =>{
       console.log(response)
     })
     this.route.navigateByUrl('/dashboard/getWishList')
@@ -85,7 +86,7 @@ export class QuickviewComponent implements OnInit {
       comment : this.feedback,
       rating : this.value
     }
-    this.bookservice.addfeedback(this.bookid, req).subscribe((response:any) =>{
+    this.bookservice.addfeedback(this.id, req).subscribe((response:any) =>{
       console.log(response)
     })
   }

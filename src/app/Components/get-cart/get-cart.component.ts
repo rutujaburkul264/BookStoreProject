@@ -39,6 +39,7 @@ export class GetCartComponent implements OnInit {
       this.listCountOfCart = response.result.length
     })
   }
+
   decrement(book:any){
     if(this.book_qty != 1){
       this.book_qty = this.book_qty - 1;
@@ -107,6 +108,7 @@ export class GetCartComponent implements OnInit {
       console.log(response);
 
     })
+    this.route.navigateByUrl("/dashboard/shopping")
   }
 
   deleteCartItem(book: any){
