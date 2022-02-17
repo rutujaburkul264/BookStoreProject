@@ -22,12 +22,12 @@
             <div class="form-fields">
                 <div>
                     <mat-form-field appearance="fill" style="height: 70px;">
-                        <mat-label>Select an option*</mat-label>
-                        <mat-select disableRipple>
-                          <mat-option value="1">User</mat-option>
-                          <mat-option value="2">Admin</mat-option>
+                        <mat-label >Select an option*</mat-label>
+                        <mat-select formControlName="selectedOption" disableRipple>
+                          <mat-option value="User">User</mat-option>
+                          <mat-option value="Admin">Admin</mat-option>
                         </mat-select>
-                      </mat-form-field>
+                    </mat-form-field>
                 </div>
                 <div>
                     <div>

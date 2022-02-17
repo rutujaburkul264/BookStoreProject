@@ -40,4 +40,22 @@ export class UserService {
     }
     return this.httpservice.put('edit_user',data,true,header)
   }
+
+  AdminSignup(data:any){
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+      })
+    }
+    return this.httpservice.post("admin/registration",data,true,header)
+  }
+
+  Adminlogin(data:any){
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+      })
+    }
+    return this.httpservice.post("admin/login",data,true,header)
+  }
 }

@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.formbuilder.group({
       email: ['',Validators.required],
-      password: ['',Validators.required]
+      password: ['',Validators.required],
+      selectedOption: ['',Validators.required]
     })
   }
 
@@ -25,18 +26,27 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
-
     if (this.loginForm.valid) {
       let data={
         email: this.loginForm.value.email,
         password: this.loginForm.value.password
       }
+      
+        if(this.loginForm.value.selectedOption == 'User'){
       this.userservice.login(data).subscribe((response:any)=>{
         console.log(response)
         localStorage.setItem('Token',response.result.accessToken);
         this.route.navigateByUrl("/dashboard")
         
       })
+    }
+    else if(this.loginForm.value.selectedOption == 'Admin'){
+      this.userservice.Adminlogin(data).subscribe((response:any)=>{
+        console.log(response)
+        localStorage.setItem('Token',response.result.accessToken);
+        this.route.navigateByUrl("/dashboard/bookList")
+      })
+    }
     }
     else{
       console.log("Form is invalid")
