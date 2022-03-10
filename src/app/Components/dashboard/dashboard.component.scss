@@ -84,3 +84,16 @@
 .icon{
   margin-left: 100%;
 }
+.Logout{
+  text-align: center;
+  color: brown;
+  border: 1px solid brown;
+  width: 150px;
+  margin-left: 20px;
+}
+::ng-deep .my-menu {
+  width: 190px;
+}
+.icon{
+  margin-left: 20px;
+}

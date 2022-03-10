@@ -84,11 +84,19 @@ export class QuickviewComponent implements OnInit {
   addFeedback(){
     let req = {
       comment : this.feedback,
-      rating : this.value
+      rating: this.value
     }
     this.bookservice.addfeedback(this.id, req).subscribe((response:any) =>{
       console.log(response)
     })
+  }
+
+  getFeedback(){
+    this.bookservice.getfeedback(this.id).subscribe((response:any)=>{
+      console.log(response.result);
+      this.feedbackArray = response.result;
+      this.feedbackArray.reverse();
+  })
   }
 }
 

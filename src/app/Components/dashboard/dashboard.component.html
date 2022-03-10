@@ -12,10 +12,17 @@
             <mat-icon class="search_bar">search</mat-icon>
             <input type="text" name="search" placeholder="Search ..." class="search" fxHide.xs fxHide.sm>
         </mat-card>
-        <div class="profileImage" fxLayout="column" fxLayoutAlign="center center" fxLayout.xs="row" fxFlex.xs="50">
+        <div class="profileImage" [matMenuTriggerFor]="menu"
+        fxLayout="column" fxLayoutAlign="center center" fxLayout.xs="row" fxFlex.xs="50">
             <mat-icon class="profileimg">person_outline</mat-icon>
             <span class="profileName" fxHide.xs fxHide.sm>profile</span>
         </div>
+        <mat-menu #menu="matMenu" class="my-menu">
+        <button mat-menu-item><mat-icon class="icon">person_outline</mat-icon>Profile</button>
+        <button mat-menu-item><mat-icon class="icon">local_mall</mat-icon>My Orders</button>
+        <button mat-menu-item><mat-icon class="icon">favorite_border</mat-icon>wishlist</button>
+        <button mat-menu-item class="Logout">Logout</button>
+        </mat-menu>
         <div class="Cart" fxLayout="column" fxLayoutAlign="end center" fxLayout.xs="row" fxFlex.xs="50">
             <mat-icon class="cartIcon" (click)="Cart()">shopping_cart</mat-icon>
             <span class="cartName" fxHide.xs fxHide.sm>cart</span>

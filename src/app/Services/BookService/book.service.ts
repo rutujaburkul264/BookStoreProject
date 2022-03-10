@@ -81,7 +81,18 @@ export class BookService {
         'x-access-token': this.token,
       })
     }
-    return this.httpservice.post('feedback/' + productId, data, true, header)
+    return this.httpservice.post('add/feedback/' + productId, data, true, header)
+  }
+
+  getfeedback(productId:any){
+    this.token = localStorage.getItem('Token')
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token,
+      })
+    }
+    return this.httpservice.get('get/feedback/' + productId,true,header)
   }
 
   deleteItem(productId:any){
