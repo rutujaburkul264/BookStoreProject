@@ -134,7 +134,7 @@
     margin-top: 20px; 
     margin-bottom: 20px; 
 }
-.overallratin{
+.overallrating{
     background: whitesmoke;
 }
 .rate{
@@ -145,14 +145,18 @@
     font-weight: 500;
     margin-top: 10px;
 }
-.starrating{
-    margin-bottom: 10px;
-    float: left;
-}
-.starrating input{
+.overallrating .star-widget input{
     display: none;
 }
-.starrating label{
+.star-widget{
+    // border: 1px solid green;
+    height: 30px;
+    margin-top: -15px;
+    margin-right: 400px;
+    // background-color: white;
+}
+.star-widget label{
+    // border: 1px solid red;
     font-size: 20px;
     color: #444;
     padding: 8px;
@@ -160,11 +164,14 @@
     transition: all 0.2 ease;
 }
 input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label
-{
+input:not(:checked) ~ label:hover ~ label{
+    color:  #fd4;
+}
+input:checked ~ label{
     color: #fd4;
 }
-input #rate-5:checked ~ label{
+
+input#rate-5:checked ~ label{
     color: #fe7;
-    text-shadow: 0 0 20px #952;
+    text-shadow: 0 0 20px #fe7;
 }
