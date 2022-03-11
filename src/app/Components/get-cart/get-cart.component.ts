@@ -16,13 +16,14 @@ export class GetCartComponent implements OnInit {
   step = 0;
   orderList: any = [];
   listCountOfCart: any;
+  submitted: boolean=false;
 
   constructor(private bookservice:BookService,private route:Router,private formbuilder:FormBuilder,private userservice:UserService) { }
 
   ngOnInit(): void {
     this.editDetailsOfUserForm = this.formbuilder.group({
       fullName: ['',Validators.required],
-      mobileNo: ['',Validators.required],
+      mobileNo: ['', [Validators. required, Validators. pattern("^((\\+91-?) |0)?[0-9]{10}$")]],
       address: ['',Validators.required],
       city: ['',Validators.required],
       state: ['',Validators.required],
@@ -74,6 +75,7 @@ export class GetCartComponent implements OnInit {
   }
 
   updateAddress(){
+    this.submitted = true;
     if (this.editDetailsOfUserForm.valid) {
       let data={
         addressType : "Home",

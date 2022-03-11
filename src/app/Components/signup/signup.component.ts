@@ -16,9 +16,9 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.signupForm = this.formbuilder.group({
       fullName: ['',Validators.required],
-      email: ['',Validators.required],
-      password: ['',Validators.required],
-      mobileNo: ['',Validators.required],
+      email: ['',[Validators.required,Validators.email]],
+      password: ['',[Validators.required,Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')]],
+      mobileNo: ['', [Validators. required, Validators. pattern("^((\\+91-?) |0)?[0-9]{10}$")]],
       selectedOption: ['',Validators.required],
       service: "advance"
     })

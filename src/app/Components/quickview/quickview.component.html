@@ -78,15 +78,15 @@
             <div class="rate">
                 <p class="ratename">Overall Rating</p>
                 <div class="star-widget">
-                    <input type="radio" id="rate-5" [(ngModel)]="value" name="rate" value="5">
+                    <input type="radio" name="rate" id="rate-5" [(ngModel)]="value" value="5">
                     <label for="rate-5" class="fa fa-star"></label>
-                    <input type="radio" id="rate-4" [(ngModel)]="value" name="rate" value="4">
+                    <input type="radio" name="rate" id="rate-4" [(ngModel)]="value" value="4">
                     <label for="rate-4" class="fa fa-star"></label>
-                    <input type="radio" id="rate-3" [(ngModel)]="value" name="rate" value="3">
+                    <input type="radio" name="rate" id="rate-3" [(ngModel)]="value" value="3">
                     <label for="rate-3" class="fa fa-star"></label>
-                    <input type="radio" id="rate-2" [(ngModel)]="value" name="rate" value="2">
+                    <input type="radio" name="rate" id="rate-2" [(ngModel)]="value" value="2">
                     <label for="rate-2" class="fa fa-star"></label>
-                    <input type="radio" id="rate-1" [(ngModel)]="value" name="rate" value="1">
+                    <input type="radio" name="rate" id="rate-1" [(ngModel)]="value" value="1">
                     <label for="rate-1" class="fa fa-star"></label>
                 </div>
             </div>
@@ -99,11 +99,10 @@
         </div>
         <div>
             <div *ngFor="let feedback of feedbackArray">
-                <button class="fabbutton" mat-mini-fab style="color: lightgrey;"
-                    aria-label="Example icon button with a menu icon">
-                    <mat-icon>{{getShortName(feedback.user_id.fullName)}}</mat-icon>
+                <button class="fabbutton" mat-mini-fab style="color: lightgrey;">
+                    {{getShortName(feedback.user_id.fullName)}}
                 </button>
-                <span>{{feedback.fullName}}</span>
+                <span>{{feedback.user_id.fullName}}</span>
             </div>
             <div fxLayout="column">
                 <span>{{feedback.rating}}</span>

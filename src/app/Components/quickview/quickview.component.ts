@@ -25,6 +25,7 @@ export class QuickviewComponent implements OnInit {
   ngOnInit(): void {
     this.id = localStorage.getItem("bookId")
     this.getBookDetails();
+    this.getFeedback();
   }
 
   getBookDetails() {
