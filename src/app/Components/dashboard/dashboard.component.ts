@@ -20,4 +20,13 @@ export class DashboardComponent implements OnInit {
     this.route.navigateByUrl("/dashboard/books")
   }
 
+  Logout(){
+    localStorage.removeItem('Token');
+    this.route.navigateByUrl("login")
+  }
+
+  wishlist(){
+    this.route.navigateByUrl("dashboard/getWishList")
+  }
+
 }
