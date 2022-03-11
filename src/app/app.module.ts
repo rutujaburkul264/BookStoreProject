@@ -5,6 +5,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
+import {MatBadgeModule} from '@angular/material/badge';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -52,6 +53,7 @@ import { AdminBookComponent } from './Components/admin-book/admin-book.component
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    MatBadgeModule,
     MatInputModule,
     MatButtonModule,
     MatMenuModule,

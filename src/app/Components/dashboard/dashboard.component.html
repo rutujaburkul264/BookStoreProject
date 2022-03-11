@@ -20,11 +20,11 @@
         <mat-menu #menu="matMenu" class="my-menu">
         <button mat-menu-item><mat-icon class="icon">person_outline</mat-icon>Profile</button>
         <button mat-menu-item><mat-icon class="icon">local_mall</mat-icon>My Orders</button>
-        <button mat-menu-item><mat-icon class="icon">favorite_border</mat-icon>Wishlist</button>
+        <button mat-menu-item (click)="wishlist()"><mat-icon class="icon">favorite_border</mat-icon>Wishlist</button>
         <button mat-menu-item class="Logout" (click)="Logout()">Logout</button>
         </mat-menu>
         <div class="Cart" (click)="Cart()" fxLayout="column" fxLayoutAlign="end center" fxLayout.xs="row" fxFlex.xs="50">
-        <button style="background-color: rgb(141, 32, 32); border: none; cursor: pointer;" matBadge="5"  matBadgeSize="small" matBadgePosition="after" matBadgeColor="warn">
+        <button style="background-color: rgb(141, 32, 32); border: none; cursor: pointer;" matBadge={{badgeCount}}  matBadgeSize="small" matBadgePosition="after" matBadgeColor="warn">
             <mat-icon class="cartIcon">shopping_cart</mat-icon>
         </button>
             <span class="cartName" fxHide.xs fxHide.sm>cart</span>

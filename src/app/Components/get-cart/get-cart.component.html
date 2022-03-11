@@ -7,7 +7,7 @@
         </mat-expansion-panel-header>
         <div class="container">
             <div fxLayout="row" fxLayoutAlign="space-between center">
-                <div fxLayout="column">
+                <div fxLayout="column" fxLayoutAlign="end end">
                     <div class="book" fxLayout="row" fxLayoutAlign="start center" *ngFor="let book of cartList">
                         <div>
                             <div class="image" fxLayoutAlign="start center">
@@ -42,14 +42,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%">
-                    <div class="location" fxLayoutAlign="center center">
-                        <mat-icon class="placeIcon">place</mat-icon>
-                        <span class="loc">Use current location</span>
-                    </div>
-                    <div>
-                        <button mat-flat-button color="primary" class="button" (click)="nextStep()">Place Order</button>
-                    </div>
+                <div fxLayoutAlign="end end">
+                    <button mat-flat-button color="primary" class="button" (click)="nextStep()">Place Order</button>
                 </div>
             </div>
         </div>
