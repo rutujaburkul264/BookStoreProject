@@ -97,16 +97,21 @@
                 <button mat-flat-button color="primary" class="submit" (click)="addFeedback()">Submit</button>
             </div>
         </div>
-        <div>
+        <div fxLayout="column" fxLayoutAlign="start start" style="margin-top: 50px;" fxLayoutGap="30px">
             <div *ngFor="let feedback of feedbackArray">
-                <button class="fabbutton" mat-mini-fab style="color: lightgrey;">
-                    {{getShortName(feedback.user_id.fullName)}}
-                </button>
-                <span>{{feedback.user_id.fullName}}</span>
-            </div>
-            <div fxLayout="column">
-                <span>{{feedback.rating}}</span>
-                <span>{{feedback.comment}}</span>
+                <div fxLayout="row"  fxLayoutAlign="start start">
+                    <div>
+                        <button class="fabbutton" mat-mini-fab style="color: lightgrey;">
+                            <mat-icon class="username">{{getShortName(feedback.user_id.fullName)}}</mat-icon>
+                        </button>
+                    </div>
+                    <p class="name">{{feedback.user_id.fullName}}</p>
+                </div>
+    
+                <div fxLayout="column" style="margin-left: 50px;">
+                    <span>{{feedback.rating}}*</span>
+                    <span>{{feedback.comment}}</span>
+                </div>
             </div>
         </div>
     </div>
